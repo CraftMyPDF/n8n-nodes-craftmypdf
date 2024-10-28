@@ -262,7 +262,12 @@ export class CraftMyPdf implements INodeType {
 					if (operation === 'list') {
 						// Account Management API: List transactions
 						// https://craftmypdf.com/docs/index.html#tag/Account-Management-API/operation/list-transactions
-						responseData = await craftMyPdfApiRequest.call(this, 'GET', '/list-transactions');
+						const qs: IDataObject = {
+							limit: this.getNodeParameter('limit', i),
+							offset: this.getNodeParameter('offset', i),
+						};
+
+						responseData = await craftMyPdfApiRequest.call(this, 'GET', '/list-transactions', qs);
 
 						returnData.push(responseData as INodeExecutionData);
 					}
