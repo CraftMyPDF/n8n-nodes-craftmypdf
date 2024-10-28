@@ -36,7 +36,7 @@ export const transactionFields: INodeProperties[] = [
 		typeOptions: {
 			minValue: 1,
 		},
-		default: 300,
+		default: 50,
 		description: 'Max number of results to return',
 		displayOptions: {
 			show: {

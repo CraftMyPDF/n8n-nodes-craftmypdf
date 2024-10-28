@@ -34,7 +34,7 @@ export const pdfOperations: INodeProperties[] = [
 				name: 'Merge',
 				value: 'merge',
 				description: 'Merges multiple PDF URLs',
-				action: 'Merge PDFs',
+				action: 'Merge multiple PDF files',
 			},
 
 			// https://craftmypdf.com/docs/index.html#tag/PDF-Manipulation-API/operation/add-watermark
@@ -42,7 +42,7 @@ export const pdfOperations: INodeProperties[] = [
 				name: 'Add Watermark',
 				value: 'addWatermark',
 				description: 'Add watermark to a PDF',
-				action: 'Add Watermark',
+				action: 'Add watermark',
 			},
 		],
 		default: 'create',

@@ -1,15 +1,15 @@
 {
   "name": "n8n-nodes-craftmypdf",
   "version": "0.1.0",
-  "description": "",
+  "description": "Automating PDF Document Creation has never been easier with CraftMyPDF's PDF template editor and PDF generation API!",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "CraftMyPdf",
+    "email": "hello@craftmypdf.com"
   },
   "repository": {
     "type": "git",
