@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-craftmypdf",
   "version": "0.1.0",
   "description": "",
   "keywords": [
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/craftmypdf/n8n-nodes-craftmypdf.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -35,14 +35,12 @@
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
-    "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
-    ]
+		"credentials": [
+			"dist/credentials/CraftMyPdfApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/CraftMyPdf/CraftMyPdf.node.js"
+		]
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^7.15.0",
