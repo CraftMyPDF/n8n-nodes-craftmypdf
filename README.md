@@ -1,46 +1,48 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-craftmypdf
 
-# n8n-nodes-starter
+This is an n8n community node. It lets you use [CraftMyPdf](https://craftmypdf.com) in your n8n workflows.
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+[CraftMyPdf](https://craftmypdf.com) offers PDF generation API and image generation API. CraftMyPDF's advanced drag & drop editor lets you design PDF templates in any browser and generate pixel-perfect PDF documents from reusable templates and data with no-code platforms such as N8n, Zapier, Make, Bubble.io or REST API.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-## Prerequisites
+The sections:
+- [Installation](#installation)  
+- [Operations](#operations)  
+- [Credentials](#credentials) <!-- delete if no auth needed -->  
+- [Compatibility](#compatibility)  
+- [Usage](#usage) <!-- delete if not using this section -->  
+- [Resources](#resources)
 
-You need the following installed on your development machine:
+## Installation
 
-* [git](https://git-scm.com/downloads)
-* Node.js and pnpm. Minimum version Node 18. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  pnpm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
-## Using this starter
+## Operations
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+The following are the options:
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-   ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
-   ```
-3. Run `pnpm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `pnpm lint` to check for errors or `pnpm lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+| Name           | Operation         | Description                                                                                                                    | Action                         | Documentation Link                                                                                                           |
+|----------------|---------------|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Create         | `create`      | Creates a PDF file with JSON data and your template.                                                                          | Create a PDF                   | [Link](https://craftmypdf.com/docs/index.html#tag/PDF-Generation-API/operation/create)                                       |
+| Create Async   | `createAsync` | Creates a PDF file asynchronously with JSON data and your template. The API returns immediately, and will retry for 3 times.  | Create a PDF asynchronously    | [Link](https://craftmypdf.com/docs/index.html#tag/PDF-Generation-API/operation/create-async)                                |
+| Merge          | `merge`       | Merges multiple PDF URLs.                                                                                                     | Merge multiple PDF files       | [Link](https://craftmypdf.com/docs/index.html#tag/PDF-Manipulation-API/operation/merge-pdfs)                                |
+| Add Watermark  | `addWatermark`| Adds a watermark to a PDF.                                                                                                    | Add watermark                  | [Link](https://craftmypdf.com/docs/index.html#tag/PDF-Manipulation-API/operation/add-watermark)                             |
 
-## More information
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+## Credentials
 
-## License
+You only need a CraftMyPdf API Key for this, you can get it in the API Integration tab in the web portal.
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+## Compatibility
+
+This package was developed & tested with n8n > 1.4.0.
+
+## Usage
+
+Please check out the [CraftMyPdf API Reference](https://craftmypdf.com/docs/index.html) for more information on how to use the integration.
+
+## Resources
+
+- [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+- [CraftMyPdf API Reference](https://craftmypdf.com/docs/index.html)
