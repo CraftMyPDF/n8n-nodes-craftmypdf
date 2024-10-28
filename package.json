@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-craftmypdf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Automating PDF Document Creation has never been easier with CraftMyPDF's PDF template editor and PDF generation API!",
   "keywords": [
     "n8n-community-node-package"
