@@ -13,6 +13,7 @@ The sections:
 - [Compatibility](#compatibility)  
 - [Usage](#usage) <!-- delete if not using this section -->  
 - [Resources](#resources)
+- [License](#license)
 
 ## Installation
 
@@ -41,6 +42,9 @@ This package was developed & tested with n8n > 1.4.0.
 ## Usage
 
 Please check out the [CraftMyPdf API Reference](https://craftmypdf.com/docs/index.html) for more information on how to use the integration.
+
+## License
+CraftMyPDF/n8n-nodes-craftmypdf is licensed under the [MIT License](LICENSE.md).
 
 ## Resources
 
