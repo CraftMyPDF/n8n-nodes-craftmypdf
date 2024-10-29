@@ -6,7 +6,11 @@
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://craftmypdf.com/",
+  "bugs": {
+    "url": "https://github.com/CraftMyPDF/n8n-nodes-craftmypdf/issues",
+    "email": "hello@craftmypdf.com"
+  },
   "author": {
     "name": "CraftMyPdf",
     "email": "hello@craftmypdf.com"
