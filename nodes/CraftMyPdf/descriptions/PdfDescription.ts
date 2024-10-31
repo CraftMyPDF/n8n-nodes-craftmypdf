@@ -81,7 +81,7 @@ export const pdfFields: INodeProperties[] = [
 		displayName: 'Version',
 		name: 'version',
 		type: 'string',
-		default: '',
+		default: '0',
 		description:
 			'To generate a PDF using a specific version of the template. We use the latest template version unless you specify otherwise.',
 		displayOptions: {

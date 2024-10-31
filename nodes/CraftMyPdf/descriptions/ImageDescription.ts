@@ -60,7 +60,7 @@ export const imageFields: INodeProperties[] = [
 		displayName: 'Version',
 		name: 'version',
 		type: 'string',
-		default: '',
+		default: '0',
 		description:
 			'To generate an image using a specific version of the template. We use the latest template version unless you specify otherwise.',
 		displayOptions: {
