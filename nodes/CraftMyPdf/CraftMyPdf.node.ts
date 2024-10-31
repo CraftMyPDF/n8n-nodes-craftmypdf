@@ -109,7 +109,6 @@ export class CraftMyPdf implements INodeType {
 						const body = {
 							template_id: this.getNodeParameter('templateId', i) as string,
 							data,
-							load_data_from: this.getNodeParameter('load_data_from', i) as string,
 							version: this.getNodeParameter('version', i) as string,
 							export_type,
 							expiration: this.getNodeParameter('expiration', i) as string,
@@ -157,7 +156,6 @@ export class CraftMyPdf implements INodeType {
 						const body: IDataObject = {
 							template_id: this.getNodeParameter('templateId', i) as string,
 							data,
-							load_data_from: this.getNodeParameter('load_data_from', i) as string,
 							version: this.getNodeParameter('version', i) as string,
 							export_type,
 							expiration: this.getNodeParameter('expiration', i) as string,

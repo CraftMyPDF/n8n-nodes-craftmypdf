@@ -78,24 +78,10 @@ export const pdfFields: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Load Data From',
-		name: 'load_data_from',
-		type: 'string',
-		default: '',
-		description:
-			'Load data from an external URL. If this is specified, it will overwrite the `data` property.',
-		displayOptions: {
-			show: {
-				resource: ['pdf'],
-				operation: ['create'],
-			},
-		},
-	},
-	{
 		displayName: 'Version',
 		name: 'version',
 		type: 'string',
-		default: '',
+		default: '0',
 		description:
 			'To generate a PDF using a specific version of the template. We use the latest template version unless you specify otherwise.',
 		displayOptions: {
