@@ -23,7 +23,7 @@
     "node": ">=18.10",
     "pnpm": ">=9.1"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@9.12.3",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -39,20 +39,20 @@
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-		"credentials": [
-			"dist/credentials/CraftMyPdfApi.credentials.js"
-		],
-		"nodes": [
-			"dist/nodes/CraftMyPdf/CraftMyPdf.node.js"
-		]
+    "credentials": [
+      "dist/credentials/CraftMyPdfApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/CraftMyPdf/CraftMyPdf.node.js"
+    ]
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^7.15.0",
-    "eslint": "^8.56.0",
-    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "@typescript-eslint/parser": "8.12.2",
+    "eslint": "8.57.1",
+    "eslint-plugin-n8n-nodes-base": "1.16.3",
     "n8n-workflow": "*",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.3"
+    "prettier": "3.3.3",
+    "typescript": "5.6.3"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
