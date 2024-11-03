@@ -12,17 +12,19 @@ import { NodeApiError } from 'n8n-workflow';
 export async function craftMyPdfApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
 	method: IHttpRequestMethods,
+	region: string,
 	endpoint: string,
 	qs = {},
 	body = {},
 	option: IDataObject = {},
 ) {
+	let uri =`https://${region}.craftmypdf.com/v1${endpoint}`;
 	let options: IRequestOptions = {
 		headers: {
 			'user-agent': 'n8n',
 			Accept: 'application/json',
 		},
-		uri: `https://api.craftmypdf.com/v1${endpoint}`,
+		uri: uri,
 		method,
 		qs,
 		body,
@@ -71,11 +73,12 @@ export function validateJSON(json: string | undefined): any {
 export async function returnFileExportType(
 	this: IExecuteFunctions,
 	method: IHttpRequestMethods,
+	region: string,
 	endpoint: string,
 	outputFile: string,
 	body = {},
 ): Promise<INodeExecutionData> {
-	const responseData = await craftMyPdfApiRequest.call(this, method, endpoint, {}, body, {
+	const responseData = await craftMyPdfApiRequest.call(this, method, region, endpoint, {}, body, {
 		useStream: true,
 		resolveWithFullResponse: true,
 		encoding: null,

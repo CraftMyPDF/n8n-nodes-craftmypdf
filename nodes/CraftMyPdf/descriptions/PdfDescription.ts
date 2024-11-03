@@ -202,9 +202,9 @@ export const pdfFields: INodeProperties[] = [
 		displayName: 'Image Resample Resolution',
 		name: 'image_resample_res',
 		type: 'number',
-		default: 600,
+		default: 0,
 		description:
-			'Optimize/downsample images of current PDF to a resolution(in DPI). This helps to reduce the PDF file size. Suggested values are 1200, 600, 300, 150 or 72.',
+			'Optimize/downsample images of current PDF to a resolution(in DPI). This helps to reduce the PDF file size. Suggested values are 1200, 600, 300, 150 or 72. Set to 0 to disable',
 		displayOptions: {
 			show: {
 				resource: ['pdf'],
