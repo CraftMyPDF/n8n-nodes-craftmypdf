@@ -43,6 +43,8 @@ This package was developed & tested with n8n > 1.4.0.
 
 Please check out the [CraftMyPdf API Reference](https://craftmypdf.com/docs/index.html) for more information on how to use the integration.
 
+Please check out the [N8n integration tutorial](https://craftmypdf.com/blog/automate-pdf-generation-with-n8n-and-craftmypdf/) for more information.
+
 ## License
 CraftMyPDF/n8n-nodes-craftmypdf is licensed under the [MIT License](LICENSE.md).
 
