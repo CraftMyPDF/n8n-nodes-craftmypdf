@@ -86,15 +86,19 @@ export class CraftMyPdf implements INodeType {
 
 		for (let i = 0; i < length; i++) {
 			try {
-
 				let region = this.getNodeParameter('region', i) as string;
-				if(!region) region = "api";
+				if (!region) region = 'api';
 
 				if (resource === 'account') {
 					if (operation === 'get') {
 						// Account Management API: Get account info
 						// https://craftmypdf.com/docs/index.html#tag/Account-Management-API/operation/get-account-info
-						responseData = await craftMyPdfApiRequest.call(this, 'GET', region, '/get-account-info');
+						responseData = await craftMyPdfApiRequest.call(
+							this,
+							'GET',
+							region,
+							'/get-account-info',
+						);
 
 						returnData.push(responseData as INodeExecutionData);
 					}
@@ -182,7 +186,14 @@ export class CraftMyPdf implements INodeType {
 						}
 
 						if (export_type === 'json') {
-							responseData = await craftMyPdfApiRequest.call(this, 'POST', region,'/create', {}, body);
+							responseData = await craftMyPdfApiRequest.call(
+								this,
+								'POST',
+								region,
+								'/create',
+								{},
+								body,
+							);
 							returnData.push(responseData as INodeExecutionData);
 						}
 						if (export_type === 'file') {
@@ -223,7 +234,14 @@ export class CraftMyPdf implements INodeType {
 							body.resize_format = this.getNodeParameter('resize_format', i) as string;
 						}
 
-						responseData = await craftMyPdfApiRequest.call(this, 'POST', region,'/create-async', {}, body);
+						responseData = await craftMyPdfApiRequest.call(
+							this,
+							'POST',
+							region,
+							'/create-async',
+							{},
+							body,
+						);
 						returnData.push(responseData as INodeExecutionData);
 					}
 					if (operation === 'merge') {
@@ -237,7 +255,14 @@ export class CraftMyPdf implements INodeType {
 							output_file: this.getNodeParameter('output_file', i) as string,
 						};
 
-						responseData = await craftMyPdfApiRequest.call(this, 'POST', region,'/merge-pdfs', {}, body);
+						responseData = await craftMyPdfApiRequest.call(
+							this,
+							'POST',
+							region,
+							'/merge-pdfs',
+							{},
+							body,
+						);
 						returnData.push(responseData as INodeExecutionData);
 					}
 					if (operation === 'addWatermark') {
@@ -275,7 +300,13 @@ export class CraftMyPdf implements INodeType {
 							offset: this.getNodeParameter('offset', i),
 						};
 
-						responseData = await craftMyPdfApiRequest.call(this, 'GET',region, '/list-transactions', qs);
+						responseData = await craftMyPdfApiRequest.call(
+							this,
+							'GET',
+							region,
+							'/list-transactions',
+							qs,
+						);
 
 						returnData.push(responseData as INodeExecutionData);
 					}

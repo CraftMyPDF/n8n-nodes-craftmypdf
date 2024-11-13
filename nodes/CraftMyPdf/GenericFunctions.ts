@@ -18,7 +18,7 @@ export async function craftMyPdfApiRequest(
 	body = {},
 	option: IDataObject = {},
 ) {
-	let uri =`https://${region}.craftmypdf.com/v1${endpoint}`;
+	let uri = `https://${region}.craftmypdf.com/v1${endpoint}`;
 	let options: IRequestOptions = {
 		headers: {
 			'user-agent': 'n8n',
