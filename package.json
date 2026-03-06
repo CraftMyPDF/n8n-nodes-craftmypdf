@@ -1,61 +1,60 @@
 {
-  "name": "n8n-nodes-craftmypdf",
-  "version": "0.1.12",
-  "description": "Automating PDF Document Creation has never been easier with CraftMyPDF's PDF template editor and PDF generation API!",
-  "keywords": [
-    "n8n-community-node-package"
-  ],
-  "license": "MIT",
-  "homepage": "https://craftmypdf.com/",
-  "bugs": {
-    "url": "https://github.com/CraftMyPDF/n8n-nodes-craftmypdf/issues",
-    "email": "hello@craftmypdf.com"
-  },
-  "author": {
-    "name": "CraftMyPdf",
-    "email": "hello@craftmypdf.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/craftmypdf/n8n-nodes-craftmypdf.git"
-  },
-  "engines": {
-    "node": ">=18.10",
-    "pnpm": ">=9.15.3"
-  },
-  "packageManager": "pnpm@9.15.3",
-  "main": "index.js",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "tsc && node ./scripts/copy-icons.js",
-    "dev": "tsc --watch",
-    "prettier": "prettier nodes credentials --check",
-    "prettier:fix": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "pnpm build && pnpm lint nodes credentials package.json"
-  },
-  "files": [
-    "dist"
-  ],
-  "n8n": {
-    "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/CraftMyPdfApi.credentials.js"
-    ],
-    "nodes": [
-      "dist/nodes/CraftMyPdf/CraftMyPdf.node.js"
-    ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/parser": "8.19.0",
-    "eslint": "8.57.1",
-    "eslint-plugin-n8n-nodes-base": "1.16.3",
-    "n8n-workflow": "1.56.0",
-    "prettier": "3.4.2",
-    "typescript": "5.7.2"
-  },
-  "peerDependencies": {
-    "n8n-workflow": "*"
-  }
+	"name": "n8n-nodes-craftmypdf",
+	"version": "0.1.12",
+	"description": "Automating PDF Document Creation has never been easier with CraftMyPDF's PDF template editor and PDF generation API!",
+	"keywords": [
+		"n8n-community-node-package"
+	],
+	"license": "MIT",
+	"homepage": "https://craftmypdf.com/",
+	"bugs": {
+		"url": "https://github.com/CraftMyPDF/n8n-nodes-craftmypdf/issues",
+		"email": "hello@craftmypdf.com"
+	},
+	"author": {
+		"name": "CraftMyPdf",
+		"email": "hello@craftmypdf.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/craftmypdf/n8n-nodes-craftmypdf.git"
+	},
+	"engines": {
+		"node": ">=24.14",
+		"pnpm": ">=11.9.0"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"prettier": "prettier --check .",
+		"prettier:fix": "prettier --write .",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/CraftMyPdfApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/CraftMyPdf/CraftMyPdf.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "0.22.0",
+		"eslint": "9.32.0",
+		"prettier": "3.8.1",
+		"release-it": "19.2.4",
+		"typescript": "5.9.3"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "2.11.0"
+	}
 }

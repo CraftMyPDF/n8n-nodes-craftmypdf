@@ -1,11 +1,11 @@
 import type {
-	IExecuteFunctions,
-	ILoadOptionsFunctions,
-	JsonObject,
-	IRequestOptions,
-	IHttpRequestMethods,
 	IDataObject,
+	IExecuteFunctions,
+	IHttpRequestMethods,
+	IHttpRequestOptions,
+	ILoadOptionsFunctions,
 	INodeExecutionData,
+	JsonObject,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
@@ -18,18 +18,15 @@ export async function craftMyPdfApiRequest(
 	body = {},
 	option: IDataObject = {},
 ) {
-	let uri = `https://${region}.craftmypdf.com/v1${endpoint}`;
-	let options: IRequestOptions = {
+	let options: IHttpRequestOptions = {
+		url: `https://${region}.craftmypdf.com/v1${endpoint}`,
 		headers: {
 			'user-agent': 'n8n',
 			Accept: 'application/json',
 		},
-		uri: uri,
 		method,
 		qs,
 		body,
-		followRedirect: true,
-		followAllRedirects: true,
 		json: true,
 	};
 
@@ -46,7 +43,7 @@ export async function craftMyPdfApiRequest(
 	}
 
 	try {
-		const response = await this.helpers.requestWithAuthentication.call(
+		const response = await this.helpers.httpRequestWithAuthentication.call(
 			this,
 			'craftMyPdfApi',
 			options,
@@ -60,11 +57,11 @@ export async function craftMyPdfApiRequest(
 	}
 }
 
-export function validateJSON(json: string | undefined): any {
+export function validateJSON(json: string | undefined): unknown {
 	let result;
 	try {
 		result = JSON.parse(json!);
-	} catch (exception) {
+	} catch {
 		result = undefined;
 	}
 	return result;
@@ -79,13 +76,11 @@ export async function returnFileExportType(
 	body = {},
 ): Promise<INodeExecutionData> {
 	const responseData = await craftMyPdfApiRequest.call(this, method, region, endpoint, {}, body, {
-		useStream: true,
-		resolveWithFullResponse: true,
-		encoding: null,
+		encoding: 'arraybuffer',
 		json: false,
 	});
 
-	const binaryData = await this.helpers.prepareBinaryData(responseData.body, outputFile);
+	const binaryData = await this.helpers.prepareBinaryData(responseData, outputFile);
 
 	return {
 		json: {},
