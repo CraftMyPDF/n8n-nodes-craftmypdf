@@ -4,21 +4,22 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
+	NodeConnectionTypes,
 	NodeOperationError,
 } from 'n8n-workflow';
 
 import { accountOperations } from './descriptions/AccountDescription';
 import { imageFields, imageOperations } from './descriptions/ImageDescription';
 import { pdfFields, pdfOperations } from './descriptions/PdfDescription';
+import { regionField } from './descriptions/SharedFields';
 import { transactionFields, transactionOperations } from './descriptions/TransactionDescription';
 import { craftMyPdfApiRequest, returnFileExportType, validateJSON } from './GenericFunctions';
-import { regionField } from './descriptions/SharedFields';
 
 export class CraftMyPdf implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'CraftMyPdf',
 		name: 'craftMyPdf',
-		icon: 'file:craftMyPdf.svg',
+		icon: 'file:../../icons/craftmypdf.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
@@ -26,8 +27,9 @@ export class CraftMyPdf implements INodeType {
 		defaults: {
 			name: 'CraftMyPDF',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		usableAsTool: true,
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'craftMyPdfApi',

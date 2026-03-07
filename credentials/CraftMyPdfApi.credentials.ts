@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	Icon,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
@@ -9,6 +10,8 @@ export class CraftMyPdfApi implements ICredentialType {
 	name = 'craftMyPdfApi';
 
 	displayName = 'CraftMyPDF API';
+
+	icon: Icon = 'file:../icons/craftmypdf.svg';
 
 	documentationUrl = 'https://craftmypdf.com/docs/index.html#section/Authentication';
 
