@@ -17,13 +17,14 @@ import { craftMyPdfApiRequest, returnFileExportType, validateJSON } from './Gene
 
 export class CraftMyPdf implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'CraftMyPdf',
+		displayName: 'CraftMyPDF',
 		name: 'craftMyPdf',
 		icon: 'file:../../icons/craftmypdf.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
-		description: 'Consume the CraftMyPDF API',
+		description:
+			'Create beautiful PDF documents with ease using our drag-and-drop template editor. Start from ready-made templates for invoices, certificates, receipts, contracts, and more.',
 		defaults: {
 			name: 'CraftMyPDF',
 		},
@@ -36,6 +37,13 @@ export class CraftMyPdf implements INodeType {
 				required: true,
 			},
 		],
+		requestDefaults: {
+			baseURL: 'https://api.craftmypdf.com/v1',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+		},
 		properties: [
 			{
 				displayName: 'Resource',

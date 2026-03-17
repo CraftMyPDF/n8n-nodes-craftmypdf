@@ -31,6 +31,6 @@ In the n8n-nodes-craftmypdf directory, run
 
    You should see the `dist` folder in the n8n-nodes-craftpdf directory now
 
-3. Open n8n via `http://localhost:5678/`. You should see the "CraftMyPdf" node when you search for it.
+3. Open n8n via `http://localhost:5678/`. You should see the "CraftMyPDF" node when you search for it.
 
    ![2024-11-01_22-31](https://github.com/user-attachments/assets/1c522a6b-a77a-4163-8911-a9ed0fb4a290)
