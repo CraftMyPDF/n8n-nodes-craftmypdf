@@ -34,3 +34,27 @@ In the n8n-nodes-craftmypdf directory, run
 3. Open n8n via `http://localhost:5678/`. You should see the "CraftMyPdf" node when you search for it.
 
    ![2024-11-01_22-31](https://github.com/user-attachments/assets/1c522a6b-a77a-4163-8911-a9ed0fb4a290)
+
+# Release a new version
+
+1. Update the `version` field in `package.json` using [`npm version`](https://docs.npmjs.com/cli/v11/commands/npm-version) command.
+
+   For example:
+
+   ```
+   # For patch version update, e.g. 0.1.1 to 0.1.2
+   npm version patch
+
+   # For minor version update, e.g. 0.1.1 to 0.2.0
+   npm version minor
+   ```
+
+   The `npm version` command will create a version commit and tag.
+
+2. Push the commit and tag
+
+   ```
+   git push --follow-tags
+   ```
+
+3. The NPM Publish job will be triggered at https://github.com/CraftMyPDF/n8n-nodes-craftmypdf/actions/workflows/publish.yaml
