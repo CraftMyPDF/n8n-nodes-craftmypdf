@@ -17,7 +17,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/craftmypdf/n8n-nodes-craftmypdf.git"
+		"url": "git+https://github.com/CraftMyPDF/n8n-nodes-craftmypdf.git"
 	},
 	"engines": {
 		"node": ">=24.14",
